@@ -1,8 +1,6 @@
 <script setup>
 import { ref } from 'vue';
 const message = ref('Hello Vue 3 in Docker!');
-
-
 </script>
 <template>
   <div class="hello">
