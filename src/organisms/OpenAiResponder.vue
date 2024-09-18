@@ -3,47 +3,23 @@ import { ref, defineEmits } from 'vue';
 
 const emit = defineEmits(['send']);
 const inputText1 = ref('');
-const inputText2= ref('');
-const inputText3 = ref('');
 
 const generateResponse = () => {
   // Emit 'send' event with input values
   emit('send', {
     input1: inputText1.value,
-    input2: inputText2.value,
-    input3: inputText3.value
   });
 
   // Clear input fields
   inputText1.value = '';
-  inputText2.value = '';
-  inputText3.value = '';
-}
-// const generateResponse = async () => {
-//   try {
-//     const apiEndpoint = 'http://127.0.0.1:8000/'; // Replace with your actual endpoint
-//     const params = { text: inputText.value }; // Parameters to send in the GET request
 
-//     const res = await axios.get(apiEndpoint, { params });
-    
-//     console.log('Response:', res.data);
-    
-//     response.value = res.data.response; // Adjust according to your API response structure
-//     error.value = ''; // Clear previous error message
-//   } catch (err) {
-//     console.error('Error fetching response:', err);
-//     response.value = '';
-//     error.value = 'Error occurred while fetching response.';
-//   }
-// };
+}
 </script>
 
 <template>
     <div class="open-ai-responder">
       <div class="textbox-wrapper">
         <input type="text" v-model="inputText1" placeholder="会社名・URL" class="info-input"/>
-        <input type="text" v-model="inputText2" placeholder="会社名・URL" class="info-input"/>
-        <input type="text" v-model="inputText3" placeholder="会社名・URL" class="info-input"/>
         <button class="send-button" @click="generateResponse">Send</button>
       </div>
     </div>

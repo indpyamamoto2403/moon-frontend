@@ -6,8 +6,8 @@ import AboutPage from './pages/AboutPage.vue'
 
 // ルートの定義
 const routes = [
-  { path: '/', component: HomePage },
-  { path: '/about', component: AboutPage },
+  { path: '/', component: HomePage, meta: { title: '生成AIレスポンダー' } },
+  { path: '/about', component: AboutPage, meta: { title: '生成AIレスポンダー' }},
 ]
 // ルーターインスタンスの作成
 const router = createRouter({
